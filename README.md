@@ -23,7 +23,7 @@ If using default configuration, you can then see this live at http://127.0.0.1:3
 ---
 ### Overview
 
-I created this using default configuration by running `rails new tax_calculator`.
+I created this using default configuration by running `rails new tax_calculator`. As a result, there is probably way too much scaffolding for this project.
 
 The calculator is a simple form with one number input. When the 'Calculate' button is pressed, the tax breakdown will show immediately below.
 
