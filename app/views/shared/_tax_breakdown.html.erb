@@ -1,0 +1,37 @@
+<%= turbo_frame_tag :breakdown do %>
+	<% unless @breakdown.nil? || @breakdown[:income].nil? %>
+		<div>
+			<p>Income: $<span><%= @breakdown[:income] %></span></p>
+		</div>
+
+		<table>
+			<thead>
+				<tr>
+					<th scope = "col">Tax Range</th>
+					<th scope = "col">Tax Percentage</th>
+					<th scope = "col">Tax Amount</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @breakdown[:line_items].each do |line_item| %>
+				<tr>
+					<% if line_item["bracket_end"].nil?  %>
+						<td> $<%= line_item["bracket_start"] %> and up </td>
+					<% else %>
+						<td> $<%= line_item["bracket_start"] %> to $<%= line_item["bracket_end"] %> </td>
+					<% end %>
+					<td> <%= line_item["tax_rate"] %>% </td>
+					<td> $<%= line_item["tax_in_bracket"] %> </td>
+				</tr>
+				<% end %>
+			</tbody>
+
+			<tfoot>
+				<tr>
+					<th scope="row" colspan="2">Total annual tax</th>
+					<td><strong>$<%= @breakdown[:total_tax] %></strong></td>
+				</tr>
+			</tfoot>
+		</table>
+  <% end %>
+<% end %>

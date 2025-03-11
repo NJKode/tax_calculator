@@ -1,0 +1,1 @@
+TAX_BRACKETS = YAML.load_file("#{Rails.root}/config/data/tax_brackets.yaml")

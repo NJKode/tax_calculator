@@ -1,0 +1,16 @@
+NZ:
+  - bracket_start: 0
+    bracket_end: 15600
+    tax: 10.5
+  - bracket_start: 15601
+    bracket_end: 53500
+    tax: 17.5
+  - bracket_start: 53501
+    bracket_end: 78100
+    tax: 30
+  - bracket_start: 78101
+    bracket_end: 180000
+    tax: 33
+  - bracket_start: 180001
+    bracket_end:
+    tax: 39
