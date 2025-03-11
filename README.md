@@ -1,24 +1,38 @@
-# README
+# Tax Calculator
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+NZ Tax calculator built by Nathan Kennedy.
 
-Things you may want to cover:
+Built on Ubuntu 24.04 (Using WSL on Windows 10).
 
-* Ruby version
+Ruby Version: `3.4.2`
 
-* System dependencies
+Rails Version: `8.0.1`
 
-* Configuration
+First, clone this repository, then:
+```
+$ bundle install
+```
 
-* Database creation
+Next, view the project locally:
+```
+$ bin/rails server
+```
 
-* Database initialization
+If using default configuration, you can then see this live at http://127.0.0.1:3000
 
-* How to run the test suite
+---
+### Overview
 
-* Services (job queues, cache servers, search engines, etc.)
+I created this using default configuration by running `rails new tax_calculator`.
 
-* Deployment instructions
+The calculator is a simple form with one number input. When the 'Calculate' button is pressed, the tax breakdown will show immediately below.
 
-* ...
+After submitting the form, I didn't want the page to refresh or navigate to a different page.
+
+In previous work, I would have solved this by making the GET request with AJAX and JQuery. However, installing JQuery seemed overkill for this project.
+
+I opted to use Hotwire/Turbo streams to get this functionality instead. I hadn't used it before so I was keen to try it out, and it comes built-in to Rails now.
+
+Using this package, Rails will intercept the request from the browser. Then, it will run the calculation using the endpoint in index_controller.rb. The returned tax breakdown is rendered in-place.
+
+I used [Water.css](https://watercss.kognise.dev/) so that I wouldn't have to bother with styles for this small project.

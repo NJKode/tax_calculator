@@ -1,5 +1,6 @@
 <%= turbo_frame_tag :breakdown do %>
 	<% unless @breakdown.nil? || @breakdown[:income].nil? %>
+		<h2>Breakdown</h2>
 		<div>
 			<p>Income: $<span><%= @breakdown[:income] %></span></p>
 		</div>
